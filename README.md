@@ -1,3 +1,6 @@
+![Unity 2020 Badge](https://img.shields.io/badge/Unity-2020-blue)
+![FPS](https://img.shields.io/badge/FPS-for%20Unity-blue)
+![C#](https://img.shields.io/badge/C-%23-lightgrey)
 # First Person Player For Unity
 
 A First Person Player for RPG Game made by help of [Bracky]()'s YT tutorials.
@@ -13,7 +16,7 @@ A First Person Player for RPG Game made by help of [Bracky]()'s YT tutorials.
 - [x] Camera Shake
 
 
-## ![ScreenShots](".\Screenshots\Screenshot1.png")
+## ![ScreenShots]("Screenshots/Screenshot1.png")
 
 ## License:
 Read [this](https://devassets.com/guidelines/) for Survival Game Asset.
@@ -26,4 +29,8 @@ You can use it anywhere but it do not give you any gurrenty that it will works o
 
 
 
+![Donation](/Assets/baponkar_Third_Person_Shooter/Image/frame.png) or [here](https://github.com/sponsors/baponkar)
+
+## Unity Version
+Unity 2020.3.15f2 or higher version.
 
