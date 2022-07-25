@@ -26,6 +26,7 @@ You can use it anywhere but it do not give you any gurrenty that it will works o
 1. [Unity Tutorials,Adding Arms - Create Survival Game by Bracky ](https://www.youtube.com/watch?v=OUQuHf8M9XQ)
 2. [First Person Movement](https://www.youtube.com/watch?v=_QajrabyTJc)
 3. [Survival Game Asset](https://devassets.com/assets/survival-game-assets/)
+4. [Unity Standard Asset Character](https://github.com/Unity-Technologies/Standard-Assets-Characters)
 
 
 ## Unity Version
