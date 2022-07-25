@@ -1,6 +1,7 @@
 ![Unity 2020 Badge](https://img.shields.io/badge/Unity-2020-blue)
 ![FPS](https://img.shields.io/badge/FPS-for%20Unity-blue)
 ![C#](https://img.shields.io/badge/C-%23-lightgrey)
+![1](https://img.shields.io/github/issues/baponkar/First-Person-Player-for-Unity)
 # First Person Player For Unity
 
 A First Person Player for RPG Game made by help of [Brackeys](https://www.youtube.com/c/Brackeys)'s YT tutorials.
@@ -31,4 +32,6 @@ You can use it anywhere but it do not give you any gurrenty that it will works o
 
 ## Unity Version
 Unity 2020.3.15f2 or higher version.
+
+
 
