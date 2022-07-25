@@ -2,6 +2,11 @@
 ![FPS](https://img.shields.io/badge/FPS-for%20Unity-blue)
 ![C#](https://img.shields.io/badge/C-%23-lightgrey)
 ![1](https://img.shields.io/github/issues/baponkar/First-Person-Player-for-Unity)
+![2](https://img.shields.io/github/forks/baponkar/First-Person-Player-for-Unity)
+![3](https://img.shields.io/github/stars/baponkar/First-Person-Player-for-Unity)
+![4](https://img.shields.io/github/license/baponkar/First-Person-Player-for-Unity)
+![5](https://img.shields.io/twitter/url?style=social)
+
 # First Person Player For Unity
 
 A First Person Player for RPG Game made by help of [Brackeys](https://www.youtube.com/c/Brackeys)'s YT tutorials.
@@ -35,3 +40,4 @@ Unity 2020.3.15f2 or higher version.
 
 
 
+![Twitter](https://img.shields.io/twitter/follow/kar_bapon?style=social)
