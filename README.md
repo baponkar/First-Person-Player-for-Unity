@@ -16,7 +16,7 @@ A First Person Player for RPG Game made by help of [Bracky]()'s YT tutorials.
 - [x] Camera Shake
 
 
-## ![ScreenShots]("Screenshots/Screenshot1.png")
+## ![ScreenShots](Screenshots/Screenshot1.png)
 
 ## License:
 Read [this](https://devassets.com/guidelines/) for Survival Game Asset.
