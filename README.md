@@ -28,9 +28,6 @@ You can use it anywhere but it do not give you any gurrenty that it will works o
 3. [Survival Game Asset](https://devassets.com/assets/survival-game-assets/)
 
 
-
-![Donation](/Assets/baponkar_Third_Person_Shooter/Image/frame.png) or [here](https://github.com/sponsors/baponkar)
-
 ## Unity Version
 Unity 2020.3.15f2 or higher version.
 
