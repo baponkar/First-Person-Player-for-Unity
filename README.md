@@ -3,7 +3,7 @@
 ![C#](https://img.shields.io/badge/C-%23-lightgrey)
 # First Person Player For Unity
 
-A First Person Player for RPG Game made by help of [Bracky]()'s YT tutorials.
+A First Person Player for RPG Game made by help of [Brackeys](https://www.youtube.com/c/Brackeys)'s YT tutorials.
 
 - [x] Locomotion
 - [x] Jump
