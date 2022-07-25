@@ -5,6 +5,7 @@
 ![2](https://img.shields.io/github/forks/baponkar/First-Person-Player-for-Unity)
 ![3](https://img.shields.io/github/stars/baponkar/First-Person-Player-for-Unity)
 ![4](https://img.shields.io/github/license/baponkar/First-Person-Player-for-Unity)
+![Youtube](https://img.shields.io/youtube/views/jja6asSY9vE?style=social)
 
 
 # First Person Player For Unity
