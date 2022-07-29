@@ -12,6 +12,8 @@
 
 A First Person Player for RPG Game made by help of [Brackeys](https://www.youtube.com/c/Brackeys)'s YT tutorials.
 
+It has roughly following Characteristics:
+
 - [x] Locomotion
 - [x] Jump
 - [x] Head Bobbing
@@ -36,7 +38,7 @@ You also need to select GroundChec from PlayerMovement Script which is attached 
 Now you can use FPS_Player prefab in your project.
 ## License:
 Read [this](https://devassets.com/guidelines/) for Survival Game Asset.
-You can use it anywhere but it do not give you any gurrenty that it will works or perfectly or do not damage anything like faulty program etc.It has contain third parties asset which are belong to their License.
+You can use it anywhere but it do not give you any gurrenty that it will works perfectly or do not damage anything like faulty program etc.It has contain third party asset which are belong to their License.
 
 ## Credits :
 1. [Unity Tutorials,Adding Arms - Create Survival Game by Bracky ](https://www.youtube.com/watch?v=OUQuHf8M9XQ)
