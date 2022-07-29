@@ -8,7 +8,7 @@
 ![Youtube](https://img.shields.io/youtube/views/jja6asSY9vE?style=social)
 
 
-# <span style="color:violet">First Person Player For Unity</span>
+# <span style="color:blue">First Person Player For Unity </span>.
 
 A First Person Player for RPG Game made by help of [Brackeys](https://www.youtube.com/c/Brackeys)'s YT tutorials.
 
