@@ -1,22 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 namespace Baponkar.FPS
 {
     public class CharacterFightControl : MonoBehaviour
     {
         Animator animator;
-        public GameObject [] weapons;
-        
-
+        public Weapon [] weapons;
+        public Text text;
+        public KeyCode [] keycodes;
         public bool hasWeapon;
-        int WeaponNumber = 0;
-        int currentWeapon = 0;
+        public int WeaponNumber = 0;
+        public int currentWeapon = 0;
 
         void Start()
         {
             animator = GetComponent<Animator>();
+            weapons = GetComponentsInChildren<Weapon>();
+            keycodes = new KeyCode[weapons.Length];
+            for(int i = 0; i < weapons.Length; i++)
+            {
+                keycodes[i] = (KeyCode) System.Enum.Parse(typeof(KeyCode), "Alpha" + (i + 1));
+            }
+            for(int i = 0; i < weapons.Length; i++)
+            {
+                if(i==0)
+                {
+                    weapons[i].gameObject.SetActive(true);
+                    text.text = "Equiped Weapon: " + weapons[i].gameObject.name.ToString();
+                }
+                else
+                {
+                    weapons[i].gameObject.SetActive(false);
+                }
+            }
         }
 
         void Update()
@@ -31,6 +49,7 @@ namespace Baponkar.FPS
             else
             {
                 animator.SetBool("hasWeapon", false);
+                DeActivateWeapon();
                 Punch(fire);
             }
             
@@ -75,6 +94,13 @@ namespace Baponkar.FPS
                 animator.SetBool("punchRight", false);
             }
         }
+        void DeActivateWeapon()
+        {
+            for(int i=0;i<weapons.Length;i++)
+            {
+                weapons[i].gameObject.SetActive(false);
+            }
+        }
 
         void WeaponSwitch()
         {
@@ -98,33 +124,29 @@ namespace Baponkar.FPS
             {
                 WeaponNumber = weapons.Length -1;
             }
-            if(Input.GetKeyDown(KeyCode.Alpha1))
+            
+           
+
+            for(int i=0;i<keycodes.Length;i++)
             {
-                WeaponNumber = 0;
+                if(Input.GetKeyDown(keycodes[i]))
+                {
+                    WeaponNumber = i;
+                }
             }
-            if(Input.GetKeyDown(KeyCode.Alpha2))
+             if(currentWeapon != WeaponNumber)
             {
-                WeaponNumber = 1;
-            }
-            if(Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                WeaponNumber = 2;
-            }
-            if(Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                WeaponNumber = 3;
-            }
-            if(currentWeapon != WeaponNumber)
-            {
+                text.text = "Equiped Weapon: " + weapons[WeaponNumber].gameObject.name.ToString();
                 for(int i=0;i<weapons.Length;i++)
                 {
                     if(i==WeaponNumber)
                     {
-                        weapons[i].SetActive(true);
+                        weapons[i].gameObject.SetActive(true);
+                        
                     }
                     else
                     {
-                        weapons[i].SetActive(false);
+                        weapons[i].gameObject.SetActive(false);
                     }
                 }
                 currentWeapon = WeaponNumber;
