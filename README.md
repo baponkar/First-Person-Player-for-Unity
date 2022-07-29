@@ -23,9 +23,9 @@ A First Person Player for RPG Game made by help of [Brackeys](https://www.youtub
 - [x] Camera Shake
 
 
-## ![ScreenShots1](Screenshots/Screenshot1.png)
-## ![ScreenShots2](Screenshots/Screenshot2.png)
-## ![ScreenShots3](Screenshots/Screenshot3.png)
+## ![ScreenShots1](Screenshots/Screenshot1.jpg)
+## ![ScreenShots2](Screenshots/Screenshot2.jpg)
+## ![ScreenShots3](Screenshots/Screenshot3.jpg)
 
 ## License:
 Read [this](https://devassets.com/guidelines/) for Survival Game Asset.
