@@ -15,7 +15,7 @@ A First Person Player for RPG Game made by help of [Brackeys](https://www.youtub
 - [x] Locomotion
 - [x] Jump
 - [x] Head Bobbing
-- [x] Four Weapon Attached
+- [x] Six Weapon Attached
 - [x] Switching Weapon with keypad and mouse
 - [x] Mini Map
 - [x] A Demo Scene
