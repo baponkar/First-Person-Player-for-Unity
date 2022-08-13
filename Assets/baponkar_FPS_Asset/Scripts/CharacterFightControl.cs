@@ -17,31 +17,22 @@ namespace Baponkar.FPS
         void Start()
         {
             animator = GetComponent<Animator>();
-            weapons = GetComponentsInChildren<Weapon>();
-            keycodes = new KeyCode[weapons.Length];
+            //weapons = GetComponentsInChildren<Weapon>();
+            //keycodes = new KeyCode[weapons.Length];
             for(int i = 0; i < weapons.Length; i++)
             {
                 keycodes[i] = (KeyCode) System.Enum.Parse(typeof(KeyCode), "Alpha" + (i + 1));
             }
-            for(int i = 0; i < weapons.Length; i++)
-            {
-                if(i==0)
-                {
-                    weapons[i].gameObject.SetActive(true);
-                    text.text = "Equiped Weapon: " + weapons[i].gameObject.name.ToString();
-                }
-                else
-                {
-                    weapons[i].gameObject.SetActive(false);
-                }
-            }
+            
         }
 
         void Update()
         {
             bool fire = Input.GetButtonDown("Fire1");
+
             if(hasWeapon)
             {
+                ActivateWeapon(WeaponNumber);
                 animator.SetBool("hasWeapon", true);
                 WeaponSwitch();
                 WeaponAttack(fire);
@@ -102,9 +93,28 @@ namespace Baponkar.FPS
             }
         }
 
+        void ActivateWeapon(int weaponIndex)
+        {
+            text.text = "Equiped Weapon: " + weapons[weaponIndex].gameObject.name.ToString();
+            if(currentWeapon != weaponIndex)
+            {
+                for(int i = 0; i < weapons.Length; i++)
+                {
+                    if(i==weaponIndex)
+                    {
+                        weapons[weaponIndex].gameObject.SetActive(true);
+                        text.text = "Equiped Weapon: " + weapons[i].gameObject.name.ToString();
+                    }
+                    else
+                    {
+                        weapons[i].gameObject.SetActive(false);
+                    }
+                }
+            }
+        }
+
         void WeaponSwitch()
         {
-            
             if(Input.GetAxis("Mouse ScrollWheel") != 0)
             {
                 if(Input.GetAxis("Mouse ScrollWheel") > 0)
@@ -116,10 +126,12 @@ namespace Baponkar.FPS
                     WeaponNumber = (WeaponNumber - 1);
                 }
             }
+            
             if(WeaponNumber >= weapons.Length)
             {
                 WeaponNumber = 0;
             }
+            
             if(WeaponNumber < 0)
             {
                 WeaponNumber = weapons.Length -1;
@@ -127,29 +139,12 @@ namespace Baponkar.FPS
             
            
 
-            for(int i=0;i<keycodes.Length;i++)
+            for(int i=0; i<keycodes.Length; i++)
             {
                 if(Input.GetKeyDown(keycodes[i]))
                 {
                     WeaponNumber = i;
                 }
-            }
-             if(currentWeapon != WeaponNumber)
-            {
-                text.text = "Equiped Weapon: " + weapons[WeaponNumber].gameObject.name.ToString();
-                for(int i=0;i<weapons.Length;i++)
-                {
-                    if(i==WeaponNumber)
-                    {
-                        weapons[i].gameObject.SetActive(true);
-                        
-                    }
-                    else
-                    {
-                        weapons[i].gameObject.SetActive(false);
-                    }
-                }
-                currentWeapon = WeaponNumber;
             }
         }
     }

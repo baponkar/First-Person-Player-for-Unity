@@ -19,4 +19,13 @@ public class Weapon : MonoBehaviour
     {
         weaponType = new WeaponType();
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.transform.name);
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            Debug.DrawRay(contact.point, contact.normal, Color.white);
+        }
+    }
 }

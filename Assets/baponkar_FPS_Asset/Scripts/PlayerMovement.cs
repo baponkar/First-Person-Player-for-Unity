@@ -82,6 +82,23 @@ namespace Baponkar.FPS
             animator.SetFloat("Speed", Mathf.Clamp(movement.magnitude,0,1f));
         }
 
+        void OnDrawGizmos()
+        {
+            // Draws a 1 unit long red line in front of the object
+            Gizmos.color = Color.red;
+            Vector3 pos = new Vector3(transform.position.x-.1f,transform.position.y +1.8f,transform.position.z+0.2f);
+            Vector3 pos1 = new Vector3(transform.position.x-.1f,transform.position.y +1.8f,transform.position.z+0.2f);
+            Vector3 pos2 = new Vector3(transform.position.x,transform.position.y +1.8f,transform.position.z+0.2f);
+            Vector3 pos3 = new Vector3(transform.position.x+.1f,transform.position.y +1.8f,transform.position.z+0.2f);
+            Vector3 pos4 = new Vector3(transform.position.x+.1f,transform.position.y +1.8f,transform.position.z+0.2f);
+            Vector3 direction = transform.TransformDirection(Vector3.forward) * .6f;
+            Gizmos.DrawRay(pos, direction);
+            Gizmos.DrawRay(pos1, direction);
+            Gizmos.DrawRay(pos2, direction);
+            Gizmos.DrawRay(pos3, direction);
+            Gizmos.DrawRay(pos4, direction);
+        }
+
         void OnControllerColliderHit(ControllerColliderHit hit)
         {
             Rigidbody body = hit.collider.attachedRigidbody;
