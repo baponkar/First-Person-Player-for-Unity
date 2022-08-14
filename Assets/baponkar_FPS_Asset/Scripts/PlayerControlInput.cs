@@ -34,6 +34,7 @@ namespace Baponkar.FPS
         // Update is called once per framek
         void Update()
         {
+            //for pc decomment the following lines
             // mouseX = Input.GetAxis("Mouse X");
             // mouseY = Input.GetAxis("Mouse Y");
 

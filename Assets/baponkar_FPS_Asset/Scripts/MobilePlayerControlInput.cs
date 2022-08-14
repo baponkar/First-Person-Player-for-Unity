@@ -36,8 +36,9 @@ namespace Baponkar.FPS
 
             playerControlInput.horizontalInput = joystick.Horizontal;
             playerControlInput.verticalInput = joystick.Vertical;
+            
             playerControlInput.mouseX = mousejoystick.Horizontal;
-            playerControlInput.mouseY = mousejoystick.Vertical;
+            playerControlInput.mouseY = mousejoystick.Vertical * 2f;
         }
 
         public void JumpIn()
