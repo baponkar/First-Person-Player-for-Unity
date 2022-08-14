@@ -12,18 +12,26 @@ namespace Baponkar.FPS
         public Transform playerBody;
         float mouseSensitivity= 100f;
         float xRotation;
+
+        PlayerControlInput playerControlInput;
         #endregion
+
+        void Awake()
+        {
+            
+        }
 
         void Start()
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            playerControlInput = GetComponentInParent<PlayerControlInput>();
+            //Cursor.lockState = CursorLockMode.Locked;
         }
 
         void Update()
         {
             
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            float mouseX = playerControlInput.mouseX * mouseSensitivity * Time.deltaTime;
+            float mouseY = playerControlInput.mouseY * mouseSensitivity * Time.deltaTime;
 
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);

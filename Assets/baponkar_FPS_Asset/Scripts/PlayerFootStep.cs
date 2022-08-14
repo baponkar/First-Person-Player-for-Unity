@@ -33,6 +33,12 @@ namespace Baponkar.FPS
                     audioSource.Play();
                 }
             }
+
+            if(playerMovement.jumpUp && playerMovement.isGrounded)
+            {
+                if(!audioSource.isPlaying)
+                    audioSource.PlayOneShot(jumpClip);
+            }
         }
     }
 }

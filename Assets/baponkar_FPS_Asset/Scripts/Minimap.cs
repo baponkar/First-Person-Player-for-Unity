@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Minimap : MonoBehaviour
 {
-    public Transform player;
+    [HideInInspector] public Transform player;
     float offsetHeight;
     
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         offsetHeight = transform.position.y - player.position.y;
     }
 

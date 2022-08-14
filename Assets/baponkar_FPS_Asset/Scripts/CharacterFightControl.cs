@@ -10,27 +10,22 @@ namespace Baponkar.FPS
     {
         Animator animator;
         public Weapon [] weapons;
-        public Text text;
-        public KeyCode [] keycodes;
+        [HideInInspector]public Text text;
+        
         public bool hasWeapon;
         public int WeaponNumber = 0;
         public int currentWeapon = 0;
+        [HideInInspector]public PlayerControlInput playerControlInput;
 
         void Start()
         {
             animator = GetComponent<Animator>();
-            //weapons = GetComponentsInChildren<Weapon>();
-            //keycodes = new KeyCode[weapons.Length];
-            for(int i = 0; i < weapons.Length; i++)
-            {
-                keycodes[i] = (KeyCode) System.Enum.Parse(typeof(KeyCode), "Alpha" + (i + 1));
-            }
-            
+            playerControlInput = GetComponent<PlayerControlInput>();
         }
 
         void Update()
         {
-            bool fire = Input.GetButtonDown("Fire1");
+            bool fire = playerControlInput.fireInput;
 
             if(hasWeapon)
             {
@@ -117,13 +112,13 @@ namespace Baponkar.FPS
 
         void WeaponSwitch()
         {
-            if(Input.GetAxis("Mouse ScrollWheel") != 0)
+            if(playerControlInput.mouseScrollWheel != 0)
             {
-                if(Input.GetAxis("Mouse ScrollWheel") > 0)
+                if(playerControlInput.mouseScrollWheel > 0)
                 {
                     WeaponNumber = (WeaponNumber + 1);
                 }
-                if(Input.GetAxis("Mouse ScrollWheel") < 0)
+                if(playerControlInput.mouseScrollWheel < 0)
                 {
                     WeaponNumber = (WeaponNumber - 1);
                 }
@@ -140,14 +135,9 @@ namespace Baponkar.FPS
             }
             
            
+            WeaponNumber = playerControlInput.activeWeaponIndex;
 
-            for(int i=0; i<keycodes.Length; i++)
-            {
-                if(Input.GetKeyDown(keycodes[i]))
-                {
-                    WeaponNumber = i;
-                }
-            }
+           
         }
     }
 }

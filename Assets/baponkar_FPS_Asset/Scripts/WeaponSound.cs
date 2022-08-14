@@ -10,6 +10,8 @@ namespace Baponkar.FPS
         CharacterFightControl fightControl;
         AudioSource audioSource;
 
+        PlayerControlInput playerControlInput;
+
         public AudioClip[] audioClips;
 
         
@@ -17,12 +19,13 @@ namespace Baponkar.FPS
         {
             fightControl = GetComponentInParent<CharacterFightControl>(); 
             audioSource = GetComponent<AudioSource>(); 
+            playerControlInput = GetComponentInParent<PlayerControlInput>();
         }
 
         
         void Update()
         {
-            if (fightControl.hasWeapon && Input.GetButtonDown("Fire1"))
+            if (fightControl.hasWeapon && playerControlInput.fireInput && !audioSource.isPlaying)
             {
                 audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
             }

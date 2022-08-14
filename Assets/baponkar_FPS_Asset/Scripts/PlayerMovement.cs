@@ -8,9 +8,11 @@ namespace Baponkar.FPS
     public class PlayerMovement : MonoBehaviour
     {
         #region Variables
+
+        [SerializeField] GameObject minimap_indicatorPlane;
         public float speed = 12f;
         public float gravity = -9.81f;
-        public KeyCode jumpKey = KeyCode.Space;
+        
         public float jumpHeight = 3f;
         public Transform groundCheck;
         public float groundDistance = 0.4f;
@@ -19,6 +21,7 @@ namespace Baponkar.FPS
         [HideInInspector]public Vector3 movement;
         [HideInInspector]public bool isGrounded;
         [HideInInspector]public bool isJumping;
+        [HideInInspector]public PlayerControlInput playerControlInput;
 
         Vector3 velocity;
         CharacterController controller;
@@ -38,11 +41,20 @@ namespace Baponkar.FPS
         }
         #endregion
 
+        void Awake()
+        {
+            var indicator = Instantiate(minimap_indicatorPlane);
+            indicator.transform.SetParent(transform, false);
+            indicator.transform.localPosition = new Vector3(0, 2.64f, 0);
+            indicator.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            indicator.transform.localRotation = Quaternion.Euler(0, -90, 0);
+        }
         
         void Start()
         {
             controller = GetComponent<CharacterController>();
             animator = GetComponent<Animator>();
+            playerControlInput = GetComponent<PlayerControlInput>();
         }
 
         
@@ -56,7 +68,7 @@ namespace Baponkar.FPS
         void Jump()
         {
             isJumping = !isGrounded;
-            if(Input.GetKeyDown(jumpKey) && isGrounded)
+            if(playerControlInput.jumpInput && isGrounded)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }
@@ -73,8 +85,8 @@ namespace Baponkar.FPS
 
         void MoveMent()
         {
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
+            float x = playerControlInput.horizontalInput;
+            float z = playerControlInput.verticalInput;
             movement = transform.right * x + transform.forward * z;
             controller.Move(movement * Time.deltaTime * speed);
             velocity += (Vector3.up * gravity) * Time.deltaTime;

@@ -10,7 +10,7 @@ namespace Baponkar.FPS
         public float maxHealth = 100f;
         float currentHealth;
         [HideInInspector] public bool isDead = false;
-        public Slider healthSlider;
+        [HideInInspector]public Slider healthSlider;
         
         void Start()
         {
