@@ -65,9 +65,13 @@ namespace Baponkar.FPS
             verticalInput = vertical;
         }
 
-        public void ChangeWeapon(int index)
+        public void ChangeWeapon()
         {
-            activeWeaponIndex = index;
+            activeWeaponIndex++;
+            if(activeWeaponIndex > 5)
+            {
+                activeWeaponIndex = 0;
+            }
         }
 
 
