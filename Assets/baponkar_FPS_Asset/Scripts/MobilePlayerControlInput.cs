@@ -23,7 +23,7 @@ namespace Baponkar.FPS
         // Start is called before the first frame update
         void Start()
         {
-            playerControlInput = GetComponent<PlayerControlInput>();
+            playerControlInput = GetComponentInParent<PlayerControlInput>();
         }
 
         // Update is called once per frame

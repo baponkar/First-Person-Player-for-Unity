@@ -4,21 +4,28 @@ using UnityEngine;
 
 
 namespace Baponkar.FPS
-    {
+{
     public class PlayerControlInput : MonoBehaviour
     {
+        #region Variables
+
         public KeyCode jumpKey = KeyCode.Space;
-        public bool jumpInput;
-        public float horizontalInput;
-        public float verticalInput;
+        [HideInInspector] public bool jumpInput;
+        [HideInInspector] public float horizontalInput;
+        [HideInInspector] public float verticalInput;
         public KeyCode [] keycodes;
-        public bool fireInput;
-        public float mouseScrollWheel;
+        [HideInInspector] public bool fireInput;
+        [HideInInspector] public float mouseScrollWheel;
 
-        public float mouseX;
-        public float mouseY;
+        [HideInInspector] public float mouseX;
+        [HideInInspector] public float mouseY;
 
-        public int  activeWeaponIndex;
+        [HideInInspector] public int  activeWeaponIndex;
+
+        [Header("Weapon Input control by mobile or pc")]
+        public bool mobileInput;
+
+        #endregion
         // Start is called before the first frame update
         void Start()
         {
@@ -29,28 +36,51 @@ namespace Baponkar.FPS
             keycodes[3] = KeyCode.Alpha4;
             keycodes[4] = KeyCode.Alpha5;
             keycodes[5] = KeyCode.Alpha6;
+
+            if(!mobileInput)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            
         }
 
         // Update is called once per framek
         void Update()
         {
+            if(mobileInput)
+            {
+                MobileInput();
+            }
+            else
+            {
+                PCInput();
+            }
+            
+        }
+
+        void PCInput()
+        {
             //for pc decomment the following lines
-            // mouseX = Input.GetAxis("Mouse X");
-            // mouseY = Input.GetAxis("Mouse Y");
+            mouseX = Input.GetAxis("Mouse X");
+            mouseY = Input.GetAxis("Mouse Y");
 
-            // jumpInput = Input.GetKeyDown(jumpKey);
-            // fireInput = Input.GetButtonDown("Fire1");
-            // horizontalInput = Input.GetAxis("Horizontal");
-            // verticalInput = Input.GetAxis("Vertical");
-            // mouseScrollWheel = Input.GetAxis("Mouse ScrollWheel");
+            jumpInput = Input.GetKeyDown(jumpKey);
+            fireInput = Input.GetButtonDown("Fire1");
+            horizontalInput = Input.GetAxis("Horizontal");
+            verticalInput = Input.GetAxis("Vertical");
+            mouseScrollWheel = Input.GetAxis("Mouse ScrollWheel");
 
-            // for(int i =0; i< keycodes.Length; i++)
-            // {
-            //     if(Input.GetKeyDown(keycodes[i]))
-            //     {
-            //         activeWeaponIndex = i;
-            //     }
-            // }
+            for(int i =0; i< keycodes.Length; i++)
+            {
+                if(Input.GetKeyDown(keycodes[i]))
+                {
+                    activeWeaponIndex = i;
+                }
+            }
+        }
+
+        void MobileInput()
+        {
             
         }
     }

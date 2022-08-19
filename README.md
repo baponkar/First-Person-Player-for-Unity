@@ -19,6 +19,7 @@ It has roughly following Characteristics:
 - [x] Head Bobbing
 - [x] Six Weapon Attached
 - [x] Switching Weapon with keypad and mouse
+- [x] Mobile Control attached
 - [x] Mini Map
 - [x] A Demo Scene
 - [x] Walking Audio 
@@ -28,6 +29,8 @@ It has roughly following Characteristics:
 ## ![ScreenShots0](Screenshots/mobile_screenshot.png)
 ## ![ScreenShots1](Screenshots/Screenshot1.jpg)
 ## ![ScreenShots2](Screenshots/Screenshot2.jpg)
+## To change Mobile Control
+## ![ScreenShots4](Screenshots/set_mobile_input.png)
 ## ![ScreenShots3](Screenshots/Screenshot3.jpg)
 
 ## Doc :

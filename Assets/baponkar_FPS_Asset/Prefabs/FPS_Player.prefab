@@ -800,7 +800,6 @@ GameObject:
   - component: {fileID: 3199529549039520298}
   - component: {fileID: 6832528348332576570}
   - component: {fileID: 847166561926316089}
-  - component: {fileID: 1104902926700863292}
   m_Layer: 10
   m_Name: FPS_Player
   m_TagString: Player
@@ -1067,6 +1066,7 @@ MonoBehaviour:
   mouseX: 0
   mouseY: 0
   activeWeaponIndex: 0
+  mobileInput: 1
 --- !u!114 &847166561926316089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1079,22 +1079,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3274bebd9317384184f6d68e2232828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPrefab: {fileID: 2923469555911811089, guid: 3483d9176ec3be640bcb18eabb26795d,
+  uiPrefab: {fileID: 5515386118552513146, guid: c41e1fac26b89c74a96f2e1b106d4428,
     type: 3}
---- !u!114 &1104902926700863292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847166561926316088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6089c617707ca7c4695ab4eacd6b4359, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  joystick: {fileID: 0}
-  mousejoystick: {fileID: 0}
+  mobileCanvas: {fileID: 6413604408309946963, guid: b063c5ad6779a1d43b06745bfff03574,
+    type: 3}
 --- !u!1 &1008956697279943017
 GameObject:
   m_ObjectHideFlags: 0
